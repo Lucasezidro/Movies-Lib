@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi"
-import "./style.css"
+import { Container } from "./style"
 
 export function Navbar() {
     const [search, setSearch] = useState("")
@@ -17,7 +17,7 @@ export function Navbar() {
     }
 
     return (
-        <div>
+        <Container>
             <nav id="navbar">
                 <h2>
                     <Link to="/"><BiCameraMovie /> Movies Lib</Link>
@@ -32,6 +32,6 @@ export function Navbar() {
                     <button type="submit"><BiSearchAlt2 /></button>
                 </form>
             </nav>
-        </div>
+        </Container>
     )
 }
