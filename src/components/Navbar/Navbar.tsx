@@ -1,10 +1,10 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { BiCameraMovie, BiSearchAlt2 } from "react-icons/bi"
 import { Container } from "./style"
 
 export function Navbar() {
-    const [search, setSearch] = useState("")
+    const [search, setSearch] = useState<any>([])
     const navigate = useNavigate()
 
     const handleSubmit = (e: any) => {
@@ -13,7 +13,7 @@ export function Navbar() {
         if (!search) return
 
         navigate(`/search?q=${search}`)
-        setSearch("")
+        setSearch([])
     }
 
     return (

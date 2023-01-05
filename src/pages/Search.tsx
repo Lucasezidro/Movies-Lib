@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { MovieCard } from '../components/MovieCard/MovieCard'
 import { MovieContext } from '../context/MovieContext'
@@ -27,7 +27,7 @@ export function Search() {
             <h2 className="title">Resultados para: <span className='query-text'>{query}</span></h2>
             <div className="movies-container">
                 {searchMovies.length === 0 && <p>Carregando...</p>}
-                {searchMovies.length > 0 && movies.map((movie: any) => <MovieCard movie={movie} />)}
+                {searchMovies.length > 0 && movies.map((movie: any) => <MovieCard key={movie} movie={movie} />)}
             </div>
         </Container>
     )

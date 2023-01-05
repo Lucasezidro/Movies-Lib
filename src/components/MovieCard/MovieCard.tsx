@@ -5,7 +5,7 @@ const imageURL = import.meta.env.VITE_IMG
 
 export type Movie = {
     poster_path: any
-    title: string 
+    title: string
     id: number
     vote_average: number
     tagline: string
