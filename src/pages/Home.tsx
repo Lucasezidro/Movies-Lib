@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { MovieCard } from '../components/MovieCard/MovieCard'
+import { MovieContext } from '../context/MovieContext'
 import { Container } from './styles/MoviesGrid'
 
 const api_key = import.meta.env.VITE_API_KEY
@@ -7,20 +8,16 @@ const movieURL = import.meta.env.VITE_API
 
 export function Home() {
     const [topMovies, setTopMovies] = useState([])
-
-    const getTopRatedMovies = async (url: string) => {
-        const res = await fetch(url)
-        const data = await res.json()
-        console.log(data)
-
-        setTopMovies(data.results)
-    }
+    const { getApiData, movies } = useContext(MovieContext)
 
     useEffect(() => {
         const topRatedUrl = `${movieURL}top_rated?${api_key}`
+
+        setTopMovies(movies)
         
-        getTopRatedMovies(topRatedUrl)
-    }, [])
+        getApiData(topRatedUrl)
+
+    }, [movies])
 
     return (
         <Container className="container">

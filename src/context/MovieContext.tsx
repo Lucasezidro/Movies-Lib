@@ -15,14 +15,14 @@ type Props = {
 
 export const MovieContext = createContext({} as MovieContextData) 
 
-export function MoviesProvider(props: MovieProviderProps) {
+export function MoviesContextProvider(props: MovieProviderProps) {
     const [movies, setMovies] = useState([])
 
-    async function getApiData({ url }: Props) {
+    const getApiData = async (url: string) => {
         const res = await fetch(url)
         const data = await res.json()
 
-        setMovies(data.result)
+        setMovies(data.results)
     }
 
     return (

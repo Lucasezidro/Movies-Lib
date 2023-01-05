@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom"
 import { Navbar } from "./components/Navbar/Navbar"
+import { MoviesContextProvider } from "./context/MovieContext"
 import { GlobalStyle } from "./styles/globalStyle"
 
 function App() {
 
   return (
-    <div>
-     <Navbar />
-     <GlobalStyle />
-     <Outlet />
-    </div>
+    <>
+      <MoviesContextProvider>
+        <Navbar />
+        <GlobalStyle />
+        <Outlet />
+     </MoviesContextProvider>
+    </>
   )
 }
 

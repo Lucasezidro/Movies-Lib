@@ -8,7 +8,7 @@ export const Container = styled.div`
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 1rem 2rem;
+    padding: 1.5rem 1.5rem;
     background-color: var(--gray-800);
 }
 #navbar h2 a {

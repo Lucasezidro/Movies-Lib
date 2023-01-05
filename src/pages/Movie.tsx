@@ -7,8 +7,9 @@ import {
     BsFillFileEarmarkTextFill
 } from "react-icons/bs"
 import { MovieCard } from "../components/MovieCard/MovieCard"
-import { Container } from "./styles/Movie"
+import "./styles/Movie.ts"
 import type { Movie } from "../components/MovieCard/MovieCard"
+import { Container } from "./styles/Movie"
 
 const api_key = import.meta.env.VITE_API_KEY
 const movieURL = import.meta.env.VITE_API
@@ -68,10 +69,9 @@ export function Movie() {
                         </h3>
                         <p>{movie.overview}</p>
                     </div>
-                    
                 </>
             )}
         </div>
     </Container>
-  )
+    )
 }

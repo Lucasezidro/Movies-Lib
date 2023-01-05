@@ -5,7 +5,7 @@ export const Container = styled.div`
         color: var(--gray-300);
         font-size: 2.5rem;
         text-align: center;
-        margin: 6rem 0 1rem;
+        margin: 7rem 0 1rem;
     }
     .title .query-text {
         color: var(--yellow-400);
